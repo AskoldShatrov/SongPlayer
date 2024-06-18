@@ -2,7 +2,7 @@
 
 ***SongPlayer*** - музыкальный плеер, разработанный с использованием Qt и QML, который позволяет пользователям воспроизводить музыку, управлять плейлистами и выполнять поиск музыкальных треков через REST API.
 
-![alt text](image-1.png)
+![alt text](https://github.com/AskoldShatrov/SongPlayer/blob/main/about/image-1.png)
 
 
 ## Особенности
@@ -39,7 +39,7 @@ m_reply = m_networkManager.get(QNetworkRequest(k_requestUrl + "?" + query.toStri
 connect(m_reply, &QNetworkReply::finished, this, &AudioSearchModel::parseData);
 ```
 
-![alt text](image-2.png)
+![alt text](https://github.com/AskoldShatrov/SongPlayer/blob/main/about/image-2.png)
 
 В методе parseData данные из ответа API разбираются с использованием QJsonDocument и QJsonObject:
 
@@ -74,10 +74,10 @@ if (headers["status"].toString() == "success") {
 После обработки всех результатов, модель данных обновляется, чтобы отобразить новые данные в интерфейсе пользователя.
 
 ```cpp
-beginResetModel(); // Очистка старого списка и добавление новых элементов
+beginResetModel();
 endResetModel();
 ```
 
 Управление добавлением, переключением песен, поведение слайдера, переключением плейлистов вынесено в класс PlayerController, использующий объекты AudioInfo для доступа к данным каждого трека.
 
-![alt text](image.png)
+![alt text](https://github.com/AskoldShatrov/SongPlayer/blob/main/about/image-3.png)
